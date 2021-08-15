@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex>
       <div class="text-center">
-        <div>一覧のページ</div>
+        <div>あああ</div>
       </div>
       <div>
         <v-simple-table>
