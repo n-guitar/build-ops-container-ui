@@ -2,7 +2,7 @@
   <v-layout column justify-center align-center>
     <v-flex>
       <div class="text-center">
-        <div>あああ</div>
+        <div>一覧のページ</div>
       </div>
       <div>
         <v-simple-table>
@@ -19,7 +19,7 @@
           <tbody>
             <tr v-for="build in buildsets" :key="build.id">
               <td>{{ build.ID }}</td>
-              <td></td>
+              <td>
                 <a
                   :href="build.git_repo"
                   target="_blank"

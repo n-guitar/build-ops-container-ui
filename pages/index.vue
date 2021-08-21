@@ -11,6 +11,8 @@
               <th>ID</th>
               <th>GIT REPO</th>
               <th>IMAGE TAG</th>
+              <th>Brunch</th>
+              <th>BuildStatus</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
@@ -27,6 +29,23 @@
                 </a>
               </td>
               <td>{{ build.img_tag }}</td>
+              <td>{{ build.branch }}</td>
+              <!-- statusによってchipを分ける -->
+              <td>
+                <div v-if="build.build_status === 'success'">
+                  <v-chip small color="green" outlined>
+                    {{ build.build_status }}
+                  </v-chip>
+                </div>
+                <div v-else-if="build.build_status === 'error'">
+                  <v-chip small color="red" outlined>
+                    {{ build.build_status }}
+                  </v-chip>
+                </div>
+                <div v-else>
+                  &nbsp;
+                </div>
+              </td>
               <td>
                 <NuxtLink
                   :to="`/buildsets/${build.ID}`"
