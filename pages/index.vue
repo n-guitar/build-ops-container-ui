@@ -2,23 +2,32 @@
   <v-layout column justify-center align-center>
     <v-flex>
       <div>
-        <BreadCrumbs />
+        <v-row>
+          <BreadCrumbs />
+          <v-btn small outlined class="ml-auto align-self-center" to="/create">
+            <v-icon dark>
+              mdi-plus
+            </v-icon>
+          </v-btn>
+        </v-row>
       </div>
       <div>
         <v-simple-table>
           <thead>
             <tr>
               <th>ID</th>
+              <th>NAME</th>
               <th>GIT REPO</th>
               <th>IMAGE TAG</th>
-              <th>Brunch</th>
-              <th>BuildStatus</th>
+              <th>BRUNCH</th>
+              <th>BUILD STATUS</th>
               <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="build in buildsets" :key="build.id">
               <td>{{ build.ID }}</td>
+              <td>{{ build.build_name }}</td>
               <td>
                 <a
                   :href="build.git_repo"
