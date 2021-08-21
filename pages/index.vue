@@ -1,8 +1,8 @@
 <template>
   <v-layout column justify-center align-center>
     <v-flex>
-      <div class="text-center">
-        <div>一覧のページ</div>
+      <div>
+        <BreadCrumbs />
       </div>
       <div>
         <v-simple-table>
@@ -63,7 +63,12 @@
 </template>
 
 <script>
+import BreadCrumbs from '~/components/BreadCrumbs.vue'
+
 export default {
+  components: {
+    BreadCrumbs
+  },
   data() {
     return {
       buildsets: []
